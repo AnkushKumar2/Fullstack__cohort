@@ -21,7 +21,7 @@ app.use(
 }))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 5500
 
 app.get('/', (req, res) => {
   res.send('Hello cohort!')
