@@ -1,4 +1,5 @@
 const registerUser = async(req,res)=>{
+    // res.send("Registered");
 //get data
 
 //validate
@@ -22,15 +23,15 @@ const registerUser = async(req,res)=>{
 
 //send success status to user
 
-const{name,email,password} =  req.body
+const  {name, email, password} =  req.body;
 
-if(!name|| !email|| !password){
+if(!name || !email || !password){
     return res.status(400).json({
-        message:"All fields are required"
+        message:"All fields are required",
     });
 }
 
 
 }
 
-export{registerUser}
+export{ registerUser };

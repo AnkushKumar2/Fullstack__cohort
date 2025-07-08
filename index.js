@@ -23,15 +23,15 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 const port = process.env.PORT || 5500
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.send('Hello cohort!')
 })
 
-app.get('/Ankush',(req, res) =>{
+app.get("/Ankush",(req, res) =>{
     res.send('hello ankush!')
 })
 
-app.get('/hey1',(request, response) => {
+app.get("/hey1",(request, response) => {
     res.send('hiiiiii ankush')
 })
 
