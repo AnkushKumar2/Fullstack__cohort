@@ -1,4 +1,5 @@
 const registerUser = async(req,res)=>{
+    console.log("Request body:",req.body);
     // res.send("Registered");
 //get data
 
@@ -29,7 +30,9 @@ if(!name || !email || !password){
     return res.status(400).json({
         message:"All fields are required",
     });
+    
 }
+
 
 
 }

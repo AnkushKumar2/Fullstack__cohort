@@ -4,9 +4,6 @@ import dotenv from "dotenv";
 import cors from "cors";
 import db from "./utilities/db.js";
 
-//import all route
-import userRoutes from "./routes/user.routes.js";
-
 dotenv.config()
 
 
@@ -17,10 +14,17 @@ app.use(
   origin: process.env.BASE_URL,
   credentials:true,
   methods:['GET','DELETE','OPTIONS'],
-  allowedheaders:['Content-type','Authorization']
+  allowedHeaders:['Content-type','Authorization']
 }))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+
+
+//import all route
+import userRoutes from './routes/user.routes.js';
+//user routes
+app.use("/api/v1/users", userRoutes)
+// app.use('/api/users', userRoutes);
 const port = process.env.PORT || 5500
 
 app.get("/", (req, res) => {
@@ -39,8 +43,7 @@ app.get("/hey1",(request, response) => {
 //connect to db
 db();
 
-//user routes
-app.use("/api/v1/users", userRoutes)
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
