@@ -1,5 +1,5 @@
 const registerUser = async(req,res)=>{
-    console.log("Request body:",req.body);
+    // console.log("Request body:",req.body);
     // res.send("Registered");
 //get data
 
